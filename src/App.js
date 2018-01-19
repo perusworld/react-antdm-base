@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
-import { DefaultLayout } from "./layout/DefaultLayout";
+import DefaultLayout from "./layout/DefaultLayout";
 import Landing from "./landing/Landing";
 import Home from "./home/Home";
 import Details from "./details/Details";

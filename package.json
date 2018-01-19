@@ -1,8 +1,9 @@
 {
-  "name": "react-base",
+  "name": "react-antdm-base",
   "version": "0.1.0",
-  "description": "Reactjs Base App",
+  "description": "Reactjs Ant Design Mobile Base App",
   "dependencies": {
+    "antd-mobile": "^2.1.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
@@ -10,27 +11,28 @@
     "react-scripts": "1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/perusworld/react-base.git"
+    "url": "git://github.com/perusworld/react-antdm-base.git"
   },
   "keywords": [
     "nodejs",
     "reactjs",
     "base"
   ],
-  "engines": {
-    "node": "8.9.4"
-  },
   "author": "Saravana Perumal Shanmugam <saravanaperumal@msn.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/perusworld/react-base/issues"
+    "url": "https://github.com/perusworld/react-antdm-base/issues"
   },
-  "homepage": "https://github.com/perusworld/react-base"
+  "homepage": "https://github.com/perusworld/react-antdm-base",
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.3",
+    "react-app-rewired": "^1.4.0"
+  }
 }

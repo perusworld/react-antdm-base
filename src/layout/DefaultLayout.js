@@ -1,41 +1,56 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import { Drawer, List, NavBar, Icon } from 'antd-mobile';
 import './DefaultLayout.css';
 
-export class DefaultLayout extends React.Component {
+const Item = List.Item;
+const Brief = Item.Brief;
+
+class DefaultLayout extends React.Component {
+  state = {
+    open: false,
+  }
+  onOpenChange = (...args) => {
+    this.setState({ open: !this.state.open });
+  }
+  goTo = (location) => {
+    this.setState({ open: !this.state.open }, () => {
+      this.props.history.push(location);
+    });
+  }
   render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary" id="mainNav">
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerMain" aria-controls="navbarTogglerMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <a className="navbar-brand" href="#">React - Base</a>
-              <div className="collapse navbar-collapse" id="navbarTogglerMain">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to={"/home"} activeClassName={"active"}>Home</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to={"/settings"} activeClassName={"active"}>Settings</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to={"/logout"} activeClassName={"active"}>Logout</NavLink>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col">
-            {this.props.children}
-          </div>
-        </div>
+    const sidebar = (
+      <div>
+        <List>
+          <Item
+            multipleLine onClick={() => this.goTo('/home')}>
+            Someone <Brief>someone@somwhere.com</Brief>
+          </Item>
+          <Item onClick={() => this.goTo('/settings')}>
+            Settings
+          </Item>
+          <Item onClick={() => this.goTo('/logout')}>
+            Logout
+          </Item>
+        </List>
       </div>
     );
+
+    return (<div>
+      <NavBar icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange}>Basic</NavBar>
+      <Drawer
+        className="my-drawer"
+        style={{ minHeight: document.documentElement.clientHeight }}
+        enableDragHandle
+        sidebar={sidebar}
+        open={this.state.open}
+        onOpenChange={this.onOpenChange}
+      >
+        <div className="content-container">
+          {this.props.children}
+        </div>
+      </Drawer>
+    </div>);
   }
 }
+export default withRouter(DefaultLayout);
