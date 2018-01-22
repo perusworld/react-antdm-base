@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
-import './Settings.css';
+import './Settings.less';
 
 export default class Settings extends Component {
     render() {

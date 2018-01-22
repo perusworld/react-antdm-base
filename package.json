@@ -30,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/perusworld/react-antdm-base/issues"
   },
-  "homepage": "https://github.com/perusworld/react-antdm-base",
+  "homepage": ".",
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "react-app-rewired": "^1.4.0"
   }
 }

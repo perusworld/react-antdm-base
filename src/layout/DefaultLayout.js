@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Drawer, List, NavBar, Icon } from 'antd-mobile';
-import './DefaultLayout.css';
+import './DefaultLayout.less';
 
 const Item = List.Item;
 const Brief = Item.Brief;

@@ -37,9 +37,9 @@ export class Details extends Component {
             Is Going
           </CheckboxItem>
           <InputItem placeholder="auto focus" name="numberOfGuests" type="number" value={this.state.numberOfGuests}
-            onChange={this.setNumberOfGuests}>Number of Guests</InputItem>
+            onChange={this.setNumberOfGuests}>Guests</InputItem>
         </List>
-        <Button onClick={this.handleSubmit} type="primary">Submit</Button>
+        <Button onClick={this.handleSubmit} type="warning">Submit</Button>
       </div>
     );
   }

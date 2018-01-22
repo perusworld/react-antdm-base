@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
+import './App.less';
 
 import DefaultLayout from "./layout/DefaultLayout";
 import Landing from "./landing/Landing";
